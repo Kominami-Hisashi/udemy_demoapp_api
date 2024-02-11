@@ -1,4 +1,4 @@
-FROM ruby:3.1.4-alpine
+FROM ruby:3.3.0-alpine
 
 ARG WORKDIR
 ARG RUNTIME_PACKAGES="nodejs tzdata postgresql-dev postgresql git"
@@ -19,7 +19,6 @@ RUN apk update && \
     apk add --virtual build-dependencies --no-cache ${DEV_PACKAGES} && \
     bundle install -j4 && \
     apk del build-dependencies
-
-COPY . .
+COPY . ./
 
 CMD ["rails", "server", "-b", "0.0.0.0"]
