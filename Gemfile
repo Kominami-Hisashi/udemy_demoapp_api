@@ -38,6 +38,11 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
+group :test do
+  # テスト結果を色付けする
+  gem 'minitest-reporters', '~> 1.6', '>= 1.6.1'
+end
+
 group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
